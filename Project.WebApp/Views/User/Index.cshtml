@@ -1,0 +1,266 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<h1 class="text-center"><b>Usuários</b></h1>
+
+<button type="button" class="btn btn-primary mr-3 mt-3" data-toggle="modal" data-target="#create">Criar</button>
+<button type="button" class="btn btn-info mr-3 mt-3" data-toggle="modal" data-target="#modalIdDetails">Ver detalhes</button>
+<button type="button" class="btn btn-warning mr-3 mt-3" data-toggle="modal" data-target="#edit">Editar</button>
+<button type="button" class="btn btn-danger mr-3 mt-3" data-toggle="modal" data-target="#modalIdDelete">Deletar</button>
+
+<!-- Tabela -->
+<div class="card-body p-0 mt-3">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Apelido</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal de criar -->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Criar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="formularioUsuario">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <div style="margin-top: 20px">
+                            <div class="form-group">
+                                <label class="control-label">Nome:</label>
+                                <input class="form-control" type="text" placeholder="Nome" name="Name" required />
+                                <span class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Apelido:</label>
+                                <input class="form-control" type="text" placeholder="Apelido" name="Nickname" required />
+                                <span class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Email:</label>
+                                <input class="form-control" type="email" placeholder="Email" name="Email" required />
+                                <span class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Senha:</label>
+                                <input class="form-control" type="password" placeholder="senha" name="Password" required />
+                            </div><div class="form-group">
+                                <label class="control-label">Número:</label>
+                                <input class="form-control" type="text" placeholder="número do celular" name="Number" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" id="btnsubmit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de visualização -->
+<div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Detalhes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex justify-content-center mr-5">
+                    <div class="col-4 ml-5" style="margin-top: 20px">
+                        <div class="form-group">
+                            <label class="control-label">Nome:</label>
+                            <p id="nome"></p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Apelido:</label>
+                            <p id="nickname"></p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Email:</label>
+                            <p id="email"></p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Senha:</label>
+                            <p id="password"></p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Número:</label>
+                            <p id="number"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal de Edição -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Editar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="formularioEditar">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <div style="margin-top: 20px">
+                            <div class="form-group">
+                                <label class="control-label">Id:</label>
+                                <input class="form-control" type="number" value="" name="id" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Nome:</label>
+                                <input class="form-control" type="text" placeholder="Nome" name="Name" required />
+                                <span class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Apelido:</label>
+                                <input class="form-control" type="text" placeholder="Apelido" name="Nickname" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Email:</label>
+                                <input class="form-control" type="email" placeholder="Email" name="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Senha:</label>
+                                <input class="form-control" type="password" placeholder="senha" name="Password" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Número:</label>
+                                <input class="form-control" type="text" placeholder="número do celular" name="Number" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" id="btnsubmitEdit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de deletar -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Deletar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-4 ml-5" style="margin-top: 20px">
+                            <div class="form-group">
+                                <label class="control-label">Nome:</label>
+                                <p id="Nome"></p>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Apelido:</label>
+                                <p id="Nickname"></p>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Email:</label>
+                                <p id="Email"></p>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Senha:</label>
+                                <p id="Password"></p>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Número:</label>
+                                <p id="Number"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" id="btnsubmitDelete" class="btn btn-danger">Deletar</button>
+                </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+<!--Modal de visualizar para id -->
+<div class="modal fade" id="modalIdDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Id</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="formularioCliente">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <input type="number" placeholder="digite o id" name="Id" id="id" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" id="btnId" class="btn btn-primary" data-toggle="modal" data-target="#details">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Modal de deletar para id -->
+<div class="modal fade" id="modalIdDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Id</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="formularioCliente">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <input type="number" placeholder="digite o id" name="Id" id="idDelete" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" id="btnIdDelete" class="btn btn-primary" data-toggle="modal" data-target="#delete">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/site.js"></script>

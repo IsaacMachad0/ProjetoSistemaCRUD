@@ -1,0 +1,17 @@
+C:\Repos\Project\Project.Infra.Data\bin\Debug\net6.0\Project.Infra.Data.deps.json
+C:\Repos\Project\Project.Infra.Data\bin\Debug\net6.0\Project.Infra.Data.runtimeconfig.json
+C:\Repos\Project\Project.Infra.Data\bin\Debug\net6.0\Project.Infra.Data.dll
+C:\Repos\Project\Project.Infra.Data\bin\Debug\net6.0\Project.Infra.Data.pdb
+C:\Repos\Project\Project.Infra.Data\bin\Debug\net6.0\Project.Domain.dll
+C:\Repos\Project\Project.Infra.Data\bin\Debug\net6.0\Project.Domain.pdb
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.csproj.AssemblyReference.cache
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.AssemblyInfoInputs.cache
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.AssemblyInfo.cs
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.csproj.CopyComplete
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.dll
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\refint\Project.Infra.Data.dll
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.pdb
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\Project.Infra.Data.genruntimeconfig.cache
+C:\Repos\Project\Project.Infra.Data\obj\Debug\net6.0\ref\Project.Infra.Data.dll
